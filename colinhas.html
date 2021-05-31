@@ -4,52 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ROBERTRON - seu ajudante web 3p</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="src/scripts.js"></script>
+    <script>
+        nome = localStorage.setItem('nome', prompt('QUAL SEU NOME ?')) 
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="cabecalho">
-            <div class="cabecalhod"><img src="img/Robertron.png" alt="" srcset=""></div>
-            <div class="cabecalhoe"><img src="img/barra_lateral.jpg" alt=""></div>
-        </div>
-
-        <div class="menu">
-            <img src="img/lu-2.png" alt="">
-            <div class="itemMenu"><a href="colinhas.html">Colinhas</a></div>
-            <div class="itemMenu">Procedimentos</div>
-            <div class="itemMenu">Materiais</div>
-            
+            <div><img class="imagem-lu" src="img/lu-2.png"><img class="imagem-logo" src="img/Robertron.png" onclick="window.open('index.html','_self')"><img src="img/lateral.png" alt=""></div>
+            <div class="menu">
+            <div class="itemMenu" onclick="window.open('colinhas.html')">Colinhas</div>
+            <div class="itemMenu" onclick="window.open('','_self')">Procedimentos</div>
+            <div class="itemMenu" onclick="window.open('materiais.html','_self')">Materiais</div>
+            <div class="itemMenu" onclick="window.open('links.html','_self')">Links</div>
+            <div class="itemMenu">Comentários</div>
+            </div>
         </div>
 
         <div class="conteudo">
-            <h3 style="text-align: center;">COLINHAS</h3>
-            <div>
-                <div class="colinhas" style="cursor: default;">TITULOS</div><div class="colinhas" style="cursor: default;">MENSAGENS</div>
-                <hr>
-                <div class="colinhas">Marketplace - Dúvidas - Pedido</div><div class="colinhas">Cancelamento</div>
-                <div class="colinhas">Marketplace - Entrega - Pedido</div><div class="colinhas">Cancelamento - Politicas</div>
-                <div class="colinhas">Marketplace - Transferência - Pedido</div><div class="colinhas">Entrega sem rastreio</div>
-                <div class="colinhas">Marketplace - Cancelamento - Pedido</div><div class="colinhas">Entrega atrasada</div>
-                <div class="colinhas">Marketplace - Troca - Pedido</div><div class="colinhas">comprovante de entrega</div>
-                <div class="colinhas">Marketplace - Nota Fiscal - Pedido</div><div class="colinhas">Entrega sem NF e rastreio</div>
-                <div class="colinhas">Marketplace - Atendimento Improdutivo - Pedido</div><div class="colinhas">Troca</div>
-                <div class="colinhas">Marketplace - Resgate já - Pedido</div>
-                <div class="colinhas">Marketplace - Produto - Pedido</div>
-            </div>            
-        </div>
 
-        <div class="lateral">
-            <h3>ATENÇÃO</h3>
-            <p>Clique no titulo ou na mensagem que deseja copiar</p>
+            <div class="menuTitulos">
+                <h3>MENU DE TITULOS</h3>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Cancelamento - Pedido')">CANCELAMENTO</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Dúvidas - Pedido')">DÚVIDAS</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Entrega - Pedido')">ENTREGA</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Transferência - Pedido')">TRÂNSFERENCIA</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Troca - Pedido')">TROCA</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Nota Fiscal - Pedido')">NOTAFISCAL</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Atendimento Improdutivo - Pedido')">IMPRODUTIVO</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Resgate já - Pedido')">RESGATE JÁ</div>
+                <div class="itemMenuTitulos" onclick="copia('Marketplace - Produto - Pedido')">PRODUTO</div>
+            </div>
+
+            <div class="mensagensGiba">
+                <h3>MENU DE MENSAGENS PRONTAS PARA ABERTURAS PROTOCOLOS GIBA</h3>
+                <!-- <div class="itemMenuMensagem" onclick="copiarMensagem('msgCancelamentoGiba')">CANCELAMENTO</div><div id="msgCancelamentoGiba" hidden></div> -->
+                <div class="itemMenuMensagem" onclick="mensagemCancelamento()">CANCELAMENTO</div><div id="msgCancelamentoGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgCancelamentoPolGiba')">CANCELAMENTO - POLITICAS</div><div id="msgCancelamentoPolGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgEntregaSRGiba')">ENTREGA SEM RASTREIO</div><div id="msgEntregaSRGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgEntregaAtrasadaGiba')">ENTREGA ATRASADA</div><div id="msgEntregaAtrasadaGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgComprovanteEntregaGiba')">COMPROVANTE DE ENTREGA</p></div><div id="msgComprovanteEntregaGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgEntregaSreNfGiba')">ENTREGA SEM NF E RASTREIO</div><div id="msgEntregaSreNfGiba" hidden></div>
+                <div class="itemMenuMensagem" onclick="copiarMensagem('msgtrocaGiba')">TROCA</div><div id="msgtrocaGiba" hidden></div>
+            </div>
+        
         </div>
 
         <div class="rodape">
-            <strong>Desenvolvido por Robert feito por Dener William Gimenes</strong>
+            <strong style="background-color: white; border-radius: 20px;">--DESENVOLVIDO POR ROBERT APARECIDO DA SILVA FEITO POR DENER WILLIAM GIMENES--</strong>
+            <textarea id="rascunhoMensagem"></textarea>
         </div>
 
         <div id="rascunhoTitulo" hidden></div>
-        <div id="rascunhoMensagem" hidden></div>
     </div>
+<script>
+    // document.getElementById('emailcliente').innerHTML='Olá,\nO ticket do seu atendimento é:\n\nAgora vou te contar como falar com o nosso parceiro e acompanhar sua solicitação:\n\nUtilizando o computador/notebook; https://meuespaco.magazineluiza.com.br/pedidos\nFaça login com seu e-mail e senha;\nNo canto superior direito clique em "Meus Pedidos";\nVerifique o produto no qual deseja falar e clique no botão “falar com a loja parceira"(ver mais);\nClique em "Veja Mais" e acompanhe a sua solicitação.\n\nUtilizando o APP\nClique no ícone com três "barras" no canto superior esquerdo da tela;\nFaça login com seu e-mail e senha;\nVá em "Seus Pedidos";\nVerifique o produto no qual deseja falar e então clique sobre a foto desse produto;\nPara finalizar, vá em "Deseja atendimento" para acompanhar a sua solicitação.\n\nAh, lembrando que o prazo de resposta é de até 2 dias úteis e a cada nova mensagem na plataforma, enviaremos também um e-mail te avisando ok ?\n\nAtenciosamente, '+nome+'.\n\nEquipe MagaLu - Marketplace.'
+
+    function copiarMensagem(id){
+        if (id == 'msgCancelamentoGiba') {
+            document.getElementById('msgCancelamentoGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato solicitando o cancelamento pois xxxxx.\nAguardará até xx/xx para ser informado sobre os procedimentos e prazos.\n\nAtenciosamente,\n'+nome+'.\nEquipe Marketplace.'
+        }else if (id == 'msgCancelamentoPolGiba') {
+            document.getElementById('msgCancelamentoPolGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato solicitando o cancelamento, pois xxxxxx.\nVerificamos aqui que ainda não consta nota fiscal e rastreio, por esses motivos favor liberar o cancelamento da compra.\n\nAtenciosamente,\n'+nome+'\nEquipe Marketplace.'
+        }else if (id == 'msgEntregaSRGiba'){
+            document.getElementById('msgEntregaSRGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato conosco cobrando a entrega, mas verificamos que não consta rastreio. Favor explicar o motivo e alinhar com a cliente, caso esteja tudo certo passar o código de rastreio atualizado.\n\nAtenciosamente,\n'+nome+'.\nEquipe Marketplace.'
+        }else if (id == 'msgEntregaAtrasadaGiba'){
+            document.getElementById('msgEntregaAtrasadaGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato cobrando a entrega que esta em atraso, favor verificar uma nova previsão e posicionar cliente até xx/10. Aguardamos o rastreio atualizado também.\n\nAtenciosamente.\n'+nome+'.\nEquipe Marketplace.'
+        }else if (id == 'msgComprovanteEntregaGiba'){
+            document.getElementById('msgComprovanteEntregaGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato afirmando que não recebeu o produto, mas consta como entregue.\nCaso realmente tenham feito a entrega, favor enviar o comprovante em até 7 dias úteis para o e-mail xxxxxxxx.\nDe toda forma, aguardamos um posicionamento até resposta até xx/10.\n\nAtenciosamente,\n'+nome+'.\nEquipe Marketplace.'
+        }else if (id == 'msgEntregaSreNfGiba'){
+            document.getElementById('msgEntregaSreNfGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato conosco cobrando a entrega, mas verificamos que a nota fiscal ainda não foi emitida, nem consta rastreio. Favor encaminhar informações sobre sua entrega e caso não seja possível, comunique ao cliente com clareza o motivo.\nAguardará resposta até xx/10.\n\nAtenciosamente,\n'+nome+'.\nEquipe Marketplace.'
+        }else if (id == 'msgtrocaGiba'){
+            document.getElementById('msgtrocaGiba').innerHTML='Olá Seller,\n\nCliente entrou em contato solicitando a troca do produto, pois xxxxxxxxx.\nAguardará até xx/10 para ser informado sobre os procedimentos e prazos.\n\nAtenciosamente,\n'+nome+'.\nEquipe Marketplace.'
+        }
+    navigator.clipboard.writeText(document.getElementById(id).innerText)
+    
+    }
+
+    function mensagemCancelamento(){
+        let motivo = localStorage.setItem('motivo',prompt('QUAL O MOTIVO DO CANCELAMENTO'))
+        let dias = localStorage.setItem('dias',prompt('AGUARDARÁ RESPOSTA ATÉ ? ULTILIZA dd/mm'))
+        let msg1 = 'Olá Seller,\n\nCliente entrou em contato solicitando o cancelamento pois '+localStorage.getItem('motivo')+'.\nAguardará até '+localStorage.getItem('dias')+' para ser informado sobre os procedimentos e prazos.\n\nAtenciosamente,\n'+localStorage.getItem('nome')+'.\nEquipe Marketplace.'
+        document.getElementById('rascunhoMensagem').innerHTML = msg1
+        setTimeout(() => {
+        }, 5000);
+        var textoCopiado = document.getElementById('rascunhoMensagem')
+        textoCopiado.select()
+        document.execCommand('copy')
+    }
+</script>
 </body>
 </html>
