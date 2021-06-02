@@ -1,0 +1,10 @@
+CEDO4.SA Valor = R$ 6.29
+DTCY3.SA Valor = R$ 9.80
+JALL3.SA Valor = R$ 8.84
+LAVV3.SA Valor = R$ 7.96
+PTNT4.SA Valor = R$ 5.14
+RCSL4.SA Valor = R$ 1.68
+SLED3.SA Valor = R$ 1.01
+CARE11.SA Valor = R$ 0.82
+PRSN11B.SA Valor = R$ 0.97
+RCFA11.SA Valor = R$ 0.95
